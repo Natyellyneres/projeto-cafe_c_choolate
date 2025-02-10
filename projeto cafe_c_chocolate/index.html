@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café com Chocolate - Loja</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f1e5;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #8B4513;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .produtos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .produto {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 200px;
+        }
+        .produto img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .preco {
+            font-weight: bold;
+            color: #8B4513;
+        }
+        .comprar {
+            background: #8B4513;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .comprar:hover {
+            background: #5a2e12;
+        }
+        .carrinho {
+            margin-top: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Café com Chocolate</h1>
+            <p>Bem-vindo à nossa loja! Escolha seu produto e faça sua compra.</p>
+        </header>
+
+        <section class="produtos">
+            <script>
+                const produtos = [
+                    { nome: "Café Espresso", preco: 8, img: "imagens/Mistura caseira para capuccino _ Pimenta no Reino.jfif" },
+                    { nome: "Café com Leite", preco: 10, img: "imagens/Xícara de capuccino de café quente com latte art na mesa de madeira no café _ imagem Premium gerada com IA.jfif" },
+                    { nome: "Chocolate Quente", preco: 12, img: "imagens/Como fazer CHOCOLATE QUENTE cremoso simples [Receita].jfif" },
+                    { nome: "Bolo de Chocolate", preco: 15, img: "imagens/Best Ever Chocolate Cake.jfif" },
+                    { nome: "Croissant de Chocolate", preco: 7, img: "imagens/Homemade Chocolate Croissants (Pain au Chocolat).jfif" },
+                    { nome: "Capuccino", preco: 11, img: "imagens/How to Make Cappuccino.jfif" },
+                    { nome: "Pão de Queijo", preco: 6, img: "imagens/Pão de queijo mineiro de família.jfif" },
+                    { nome: "Torta de Morango", preco: 14, img: "imagens/Torta de morango.jfif" },
+                    { nome: "Brigadeiro", preco: 5, img: "imagens/Brigadeiro.jfif" },
+                    { nome: "Brownie", preco: 9, img: "imagens/The Chewy Brownies Of Your Dreams - Gemma’s Bigger Bolder Baking.jfif" }
+                ];
+
+                document.write(produtos.map(p => `
+                    <div class="produto">
+                        <img src="${p.img}" alt="${p.nome}">
+                        <h2>${p.nome}</h2>
+                        <p class="preco">R$${p.preco},00</p>
+                        <button class="comprar" onclick="adicionarAoCarrinho('${p.nome}', ${p.preco})">Comprar</button>
+                    </div>
+                `).join(''));
+            </script>
+        </section>
+
+        <footer>
+            <div class="carrinho">
+                <h3>Carrinho</h3>
+                <ul id="itensCarrinho"></ul>
+                <p>Total: R$<span id="total">0,00</span></p>
+                <button onclick="finalizarCompra()">Finalizar Compra</button>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
