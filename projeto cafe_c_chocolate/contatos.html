@@ -68,7 +68,8 @@
         }
     </style>
 </head>
-<body>
+<body> 
+
     <div class="container">
         <header>
             <h1>Café com Chocolate - Contato</h1>
@@ -89,10 +90,15 @@
 
         <section class="formulario">
             <h2>Envie uma mensagem</h2>
-            <form>
-                <input type="text" placeholder="Seu nome" required>
-                <input type="email" placeholder="Seu email" required>
-                <textarea placeholder="Sua mensagem" rows="5" required></textarea>
+            <form action="resposta.html" method="get">
+                <input type="text" placeholder="Seu nome"  id="nome" name="nome" required>
+                <input type="email" placeholder="Seu email" id="email" name="email"required>
+                ASSUNTO:
+             <input type="radio" name="opcao" id="opcao" value="elogio">elogio</input>
+             <input type="radio" name="opcao" id="opcao" value="reclamacao">reclamacao</input>
+             <input type="radio" name="opcao" id="opcao" value="feedback">feedback</input>
+             <input type="radio" name="opcao" id="opcao" value="outro">outro</input>
+                <input type="text" placeholder="Sua mensagem" rows="5" id="mensagem" name="mensagem"required></input>
                 <button type="submit">Enviar</button>
             </form>
         </section>

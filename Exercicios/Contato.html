@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário envia resposta</title>
+</head>
+
+<body>
+    <h1>Entre em Contato</h1>
+    <!--action serve para indicar o local de envio dos dados-->
+    <!--method serve para indicar a forma de envio de dados-->
+    <form action="resposta.html" method="get">
+        <label>Nome:</label>
+        <input type="text" id="nome" name="nome" required><br><br>
+        <!-- id serve para identificar o campo-->
+        <!-- name serve para nomear o campo usado em BD-->
+        <!-- DICA: preferencialmente tudo em minusculo-->
+        <!-- required serve para fazer do campo obrigatorio-->
+        <label>Celular:</label>
+        <input type="text" id="tel_cel" name="tel_cel" required><br><br>
+        <label>Endereço:</label>
+        <input type="text" id="endereco" name="endereco" required><br><br>
+        <label>Bairro:</label>
+        <input type="text" id="Bairro" name="Bairro" required><br><br>
+        <label>Cidade:</label>
+        <input type="text" id="Cidade" name="Cidade" required><br><br>
+        <label>Estado:</label>
+        <input type="text" id="Estado" name="Estado" required><br><br>
+        <label>CEP:</label>
+        <input type="text" id="CEP" name="CEP" required><br><br>
+        <label>Numero:</label>
+        <input type="text" id="Numero" name="Numero" required><br><br>
+        <label>Complemento:</label>
+        <input type="text" id="Complemento" name="Complemento"><br><br>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+
+</html>
